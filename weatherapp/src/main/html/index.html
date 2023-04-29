@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Our Funky HTML Page</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    <script type="text/javascript">
+      function api(city) {
+        fetch(`http://api.weatherapi.com/v1/current.json?key=46285488828647eb832193959231504&q=${city}`)
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            console.log(data.location);
+            document.getElementById('temp_f').innerHTML = data.current.temp_f;
+          })
+          .catch(error => document.getElementById('temp_f').innerHTML = error);
+      }
+    </script>
+  </head>
+  <body>
+    Current temp_f:
+    <input id="city" placeholder="City"></input>
+    <input type="button" onclick="api(document.getElementById('city').value)" value="click here"></input>
+    <p id="temp_f"></p>
+  </body>
+</html>
