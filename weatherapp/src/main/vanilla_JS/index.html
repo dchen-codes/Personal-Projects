@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Weather Application</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling.css"/>
+  </head>
+  <body>
+    <section class="top banner">
+      <div class="container">
+        <h1 class="Header">
+          Simple Weather Application
+        </h1>
+      </div>
+    </section>
+    <section>
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="city" 
+          placeholder="Enter a city name">
+        </input>
+        <input 
+          type="button" 
+          onclick="api(document.getElementById('city').value)" 
+          id="search"
+          value="Search">
+        </input>
+      </div>
+    </section>
+    <section>
+      <div class="output">
+        <p id="temp_f"></p>
+        <img id="icon" width="15%" height="15%"></img>
+      </div>
+    </section>
+  </body>
+</html>
